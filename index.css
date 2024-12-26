@@ -1,0 +1,232 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background: #f5f5f5;
+    display: flex;
+    flex-direction: column;
+}
+
+#app {
+    flex: 1;
+    display: flex;
+}
+
+#sidebar {
+    width: 250px;
+    background-color: dodgerblue;
+    color: #fff;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+#sidebar h2{
+    margin-bottom: 10px;
+}
+
+#createBoardBtn {
+    width: 100%;
+    padding: 8px 0;
+    background-color: #06aa7b;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+#createBoardBtn:hover, .saveBtn:hover, .addColumnBtn:hover {
+    background-color: #04865f;
+}
+
+#main {
+    flex: 1;
+    padding: 20px;
+    overflow: auto;
+}
+
+#boardDetails p {
+    color: #999;
+}
+
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.modalContent {
+    background: #fff;
+    padding: 20px;
+    border-radius: 6px;
+    width: 300px;
+    max-width: 80%;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.modalContent h3 {
+    margin: 0;
+}
+
+.modalContent input {
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.modalButtons {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+.saveBtn {
+    background-color: #06aa7b;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 4px;
+    padding: 8px 14px;
+}
+
+.cancelBtn {
+    background-color: #ccc;
+    border: none;
+    color: #333;
+    cursor: pointer;
+    border-radius: 4px;
+    padding: 8px 14px;
+}
+
+.cancelBtn:hover {
+    background-color: #bbb;
+}
+
+#boardList {
+    list-style-type: none;
+    padding: 0;
+}
+
+#boardList li {
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    background-color: #3b82f6;
+    transition:  background-color 0.2s;
+}
+
+#boardList li:hover {
+    background-color: #1f57a8;
+}
+
+#boardList li.active {
+    background-color: #0f3c78;
+}
+
+.addColumnBtn {
+    padding: 8px 12px;
+    background-color: #06aa7b;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.boardTitleArea {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.boardTitleArea h2 {
+    margin-right: 20px;
+}
+
+.columnsContainer {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+}
+
+.column {
+    background-color: #e9ecef;
+    border-radius: 5px;
+    padding: 10px;
+    min-width: 220px;
+    max-height: 500px;
+    overflow-y: hidden;
+    position: relative;
+}
+
+.columnHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.columnHeader h3 {
+    margin: 0;
+    font-size: 16px;
+}
+
+.columnButtons {
+    display: flex;
+    gap: 6px;
+}
+
+.editColBtn, .deleteColBtn, .editTicketBtn, .deleteTicketBtn {
+    background: none;
+    border: none;
+    color: #333;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.addTicketBtn {
+    background-color: #d0a62a;
+    border: none;
+    color: #fff;
+    padding: 6px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.ticket {
+    background-color: #fff;
+    margin-bottom: 8px;
+    padding: 8px;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+    cursor: move;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ticketName {
+    flex: 1;
+}
+
+.ticketButtons {
+    display: flex;
+    gap: 6px;
+    margin-left: 10px;
+}
